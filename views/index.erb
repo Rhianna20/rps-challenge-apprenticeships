@@ -1,5 +1,11 @@
- <form action="/play" method="post">
- <label for="name">Enter your name</label>
-<input type="text" name="name">
+<% if @name %>
+<h1>Welcome <%= @name %> </h1>
+<% end %>
 
- </form>
+    <div>
+        <form action="/play.rb" method="post">
+            <label for="name">Enter your name</label>
+                <input type="text" name="name">
+              <input type="submit" value="submit">
+        </form> 
+    <div>

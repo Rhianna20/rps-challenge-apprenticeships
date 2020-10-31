@@ -2,35 +2,32 @@ require 'sinatra/base'
 # Game controleer
 
 class RockPaperScissors < Sinatra::Base
-  set :session_secret, 'super secret'
-
-
+  enable :sessions
 
   get '/' do
-  
     erb :index
   end
 
-  run! if app_file == $0
-
- get '/welcome' do
-erb :index 
- end
-
   post '/play' do
-    @player1 = params[:player1]
+    session[:player1] = params[:player1]
     puts params
-   
-    erb :play_game
+    redirect 'play_game'
   end
+
 get '/play_game' do
-  
-erb :play_game
+  @player1 = session[:player1]
+  @shape = session[:shape]
+ @computer_choice = session[:computer_choice]
+  erb :play_game
 end
   
- 
-
+post '/play_game' do
+  session[:shape] = params[:shape]
+  session[:computer_choice] = :rock 
+  redirect '/play_game'
 end
 
 
+run! if app_file == $0
+end
 

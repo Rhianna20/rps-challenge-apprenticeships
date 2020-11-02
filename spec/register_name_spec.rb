@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 feature 'register name' do
 scenario 'register name' do
     visit('/')  
@@ -23,13 +22,13 @@ end
     end
     scenario 'game chooses Rock' do
         click_button 'Rock'
-        message = find{css, "#computer"}.text.strip
-
+        message - find(css, "#computer").text.strip
+    end
 
     def different_options
-        {:rock, :paper, :scissors}.map { |shape| "Cbot #{shape.to_s.capitalize}" }
+        [:rock, :paper, :scissors].map { |shape| "Cbot #{shape.to_s.capitalize}" }
         end
-        
-
-
     end
+
+
+    

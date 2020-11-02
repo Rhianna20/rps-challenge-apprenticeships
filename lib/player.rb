@@ -1,6 +1,6 @@
 class Player
-  attr_reader :player_1  
+  attr_reader :playername  
   def initialize(*)
-    @player1 = Player.new
+    @playername = playername.new
   end
 end

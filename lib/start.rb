@@ -26,6 +26,7 @@ class Start
     end
 
     private
+    
     def result
         return if @computer_choice.nil?
         GAME_LOGIC[@playerchoice][@computer_choice]

@@ -25,6 +25,7 @@ end
         message - find(css, "#computer").text.strip
     end
 
+    scenario 'computer chooses a randomn 
     def different_options
         [:rock, :paper, :scissors].map { |shape| "Cbot #{shape.to_s.capitalize}" }
         end
